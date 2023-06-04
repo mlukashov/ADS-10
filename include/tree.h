@@ -6,14 +6,14 @@
 #include <string>
 
 class Tree {
-private:
+ private:
     struct Node {
         std::vector<Node*> vctr;
         char val;
     };
     Node* root;
 
-public:
+ public:
     int per_size;
     std::vector<char> tmp_inf;
     std::vector<char> inf;
@@ -24,8 +24,7 @@ public:
     Node* addChilds(Node* root, std::vector<char> ch) {
         if (!root) {
             throw std::string("Error!");
-        }
-        else {
+        } else {
             if (!ch.empty()) {
                 for (int i = 0; i < ch.size(); i++) {
                     root->vctr.push_back(new Node);
@@ -36,8 +35,7 @@ public:
                     for (int k = 0; k < ch.size(); k++) {
                         if (k != i) {
                             in_i.push_back(ch[k]);
-                        }
-                        else {
+                        } else {
                             inf.push_back(ch[i]);
                         }
                     }
@@ -52,8 +50,7 @@ public:
     explicit Tree(std::vector<char> in) : root(nullptr), n_fact(0), per_size(0) {
         if (root) {
             throw std::string("Error!");
-        }
-        else {
+        } else {
             if (!in.empty()) {
                 v = in;
                 per_size = in.size();
